@@ -63,14 +63,14 @@ namespace AgOpenGPS
             if (!mf.mc.isOutOfBounds)
             {
                 GL.Color4(0,0,0,0.8);
-                GL.LineWidth(6);
+                GL.LineWidth(0); // change from 6 to 0 // still testing forgot what it does 
 
                 for (int i = 0; i < bndList.Count; i++)
                 {
                     bndList[i].fenceLineEar.DrawPolygon();
                 }
 
-                GL.Color4(0.95f, 0.44f, 0.350f, 0.8f);
+                GL.Color4(0.031f, 0.024f, 0.847f, 1.0f); // change color boundary // should be fendt boundary color now
                 GL.LineWidth(2);
 
                 for (int i = 0; i < bndList.Count; i++)
@@ -81,7 +81,7 @@ namespace AgOpenGPS
             else
             {
                 GL.LineWidth(mf.ABLine.lineWidth * 3);
-                GL.Color3(0.95f, 0.25f, 0.250f);
+                GL.Color3(0.031f, 0.024f, 0.847f); //change boundary color if out of boundary
 
                 for (int i = 0; i < bndList.Count; i++)
                 {
