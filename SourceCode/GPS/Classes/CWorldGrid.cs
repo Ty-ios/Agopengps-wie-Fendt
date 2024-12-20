@@ -113,16 +113,17 @@ namespace AgOpenGPS
         public void DrawWorldGrid(double _gridZoom)
         {
             //_gridZoom *= 0.5;
-
+            _gridZoom = 9; // change Set this to the desired grid size (adjust as needed) made with Chatgpt
+            
             GL.Rotate(-gridRotation, 0, 0, 1.0);
 
             if (mf.isDay)
             {
-                GL.Color3(0.35, 0.35, 0.35);
+                GL.Color3(0.62, 0.47, 0.09); // change day grid color from (0.35, 0.35, 0.35) to fendt Braun (also Ab line color) (0.62, 0.47, 0.09)
             }
             else
             {
-                GL.Color3(0.17, 0.17, 0.17);
+                GL.Color3(0.854, 0.902, 0.608); // change night grid color from gray 0.17, 0.17, 0.17) to fendt yellow (zombie color) (0.854, 0.902, 0.608)
             }
             GL.LineWidth(1);
             GL.Begin(PrimitiveType.Lines);
